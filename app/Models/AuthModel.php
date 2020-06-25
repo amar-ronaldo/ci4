@@ -1,8 +1,8 @@
 <?php namespace App\Models;
 
-use CodeIgniter\Model;
+use App\Models\BaseModel;
 
-class AuthModel extends Model
+class AuthModel extends BaseModel implements BaseModel
 {
     protected $table      = 'users';
     protected $primaryKey = 'id';

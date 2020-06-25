@@ -128,3 +128,5 @@ nb-configuration.xml
 /results/
 /phpunit*.xml
 /.phpunit.*.cache
+public/NULL
+theme/
