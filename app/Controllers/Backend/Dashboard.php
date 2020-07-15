@@ -5,10 +5,9 @@ class Dashboard extends BaseController
 {
 	public function index()
 	{
-		$data = [
-			'title'=>lang("Login/page_name")
-		];
-		return view('backend/dashboard',$data);
+		return view('backend/dashboard',[
+			'title'=>'Dashboard'
+		]);
 	}
 
 }

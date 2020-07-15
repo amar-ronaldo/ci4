@@ -6,5 +6,15 @@ class AllSeeder extends \CodeIgniter\Database\Seeder
     {
         $this->call('UsersSeeder');
         $this->call('UserGroupsSeeder');
+        $this->call('UsersGroupsSeeder');
+
+        $this->call('MenuTypesSeeder');
+        $this->call('MenuSeeder');
+
+        $this->call('MemberSeeder');
+        $this->call('MemberBanksSeeder');
+        $this->call('MembersBanksSeeder');
+        $this->call('MemberSitesSeeder');
+        $this->call('MembersSitesSeeder');
     }
 }

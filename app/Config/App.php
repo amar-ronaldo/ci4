@@ -99,7 +99,7 @@ class App extends BaseConfig
 	| dates with the date helper, and can be retrieved through app_timezone()
 	|
 	*/
-	public $appTimezone = 'America/Chicago';
+	public $appTimezone = 'Asia/Jakarta';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -188,7 +188,7 @@ class App extends BaseConfig
 	public $sessionMatchIP           = false;
 	public $sessionTimeToUpdate      = 300;
 	public $sessionRegenerateDestroy = false;
-
+	
 	/*
 	|--------------------------------------------------------------------------
 	| Cookie Related Variables
@@ -209,7 +209,7 @@ class App extends BaseConfig
 	public $cookiePath     = '/';
 	public $cookieSecure   = false;
 	public $cookieHTTPOnly = false;
-
+	
 	/*
 	|--------------------------------------------------------------------------
 	| Reverse Proxy IPs
@@ -222,47 +222,48 @@ class App extends BaseConfig
 	|
 	| You can use both an array or a comma-separated list of proxy addresses,
 	| as well as specifying whole subnets. Here are a few examples:
-	|
-	| Comma-separated:	'10.0.1.200,192.168.5.0/24'
-	| Array:		array('10.0.1.200', '192.168.5.0/24')
-	*/
-	public $proxyIPs = '';
-
-	/*
-	|--------------------------------------------------------------------------
-	| Cross Site Request Forgery
-	|--------------------------------------------------------------------------
-	| Enables a CSRF cookie token to be set. When set to TRUE, token will be
-	| checked on a submitted form. If you are accepting user data, it is strongly
-	| recommended CSRF protection be enabled.
-	|
-	| CSRFTokenName   = The token name
-	| CSRFHeaderName  = The header name
-	| CSRFCookieName  = The cookie name
-	| CSRFExpire      = The number in seconds the token should expire.
-	| CSRFRegenerate  = Regenerate token on every submission
-	| CSRFRedirect    = Redirect to previous page with error on failure
-	*/
-	public $CSRFTokenName  = 'csrf_test_name';
-	public $CSRFHeaderName = 'X-CSRF-TOKEN';
-	public $CSRFCookieName = 'csrf_cookie_name';
-	public $CSRFExpire     = 7200;
-	public $CSRFRegenerate = true;
-	public $CSRFRedirect   = true;
-
-	/*
-	|--------------------------------------------------------------------------
-	| Content Security Policy
-	|--------------------------------------------------------------------------
-	| Enables the Response's Content Secure Policy to restrict the sources that
-	| can be used for images, scripts, CSS files, audio, video, etc. If enabled,
-	| the Response object will populate default values for the policy from the
-	| ContentSecurityPolicy.php file. Controllers can always add to those
-	| restrictions at run time.
-	|
-	| For a better understanding of CSP, see these documents:
-	|   - http://www.html5rocks.com/en/tutorials/security/content-security-policy/
-	|   - http://www.w3.org/TR/CSP/
-	*/
-	public $CSPEnabled = false;
-}
+		|
+		| Comma-separated:	'10.0.1.200,192.168.5.0/24'
+		| Array:		array('10.0.1.200', '192.168.5.0/24')
+		*/
+		public $proxyIPs = '';
+		
+		/*
+		|--------------------------------------------------------------------------
+		| Cross Site Request Forgery
+		|--------------------------------------------------------------------------
+		| Enables a CSRF cookie token to be set. When set to TRUE, token will be
+		| checked on a submitted form. If you are accepting user data, it is strongly
+		| recommended CSRF protection be enabled.
+		|
+		| CSRFTokenName   = The token name
+		| CSRFHeaderName  = The header name
+		| CSRFCookieName  = The cookie name
+		| CSRFExpire      = The number in seconds the token should expire.
+		| CSRFRegenerate  = Regenerate token on every submission
+		| CSRFRedirect    = Redirect to previous page with error on failure
+		*/
+		public $CSRFTokenName  = 'csrf_test_name';
+		public $CSRFHeaderName = 'X-CSRF-TOKEN';
+		public $CSRFCookieName = 'csrf_cookie_name';
+		public $CSRFExpire     = 7200;
+		public $CSRFRegenerate = true;
+		public $CSRFRedirect   = true;
+		
+		/*
+		|--------------------------------------------------------------------------
+		| Content Security Policy
+		|--------------------------------------------------------------------------
+		| Enables the Response's Content Secure Policy to restrict the sources that
+		| can be used for images, scripts, CSS files, audio, video, etc. If enabled,
+		| the Response object will populate default values for the policy from the
+		| ContentSecurityPolicy.php file. Controllers can always add to those
+		| restrictions at run time.
+		|
+		| For a better understanding of CSP, see these documents:
+		|   - http://www.html5rocks.com/en/tutorials/security/content-security-policy/
+		|   - http://www.w3.org/TR/CSP/
+		*/
+		public $CSPEnabled = false;
+	}
+	

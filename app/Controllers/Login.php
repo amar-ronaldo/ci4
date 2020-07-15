@@ -47,6 +47,7 @@ class Login extends BaseController
 			'id' => $user['id'],
 			'username' => $user['username'],
 			'email' => $user['email'],
+			'avatar' => $user['avatar'],
 		]);
 	}
 

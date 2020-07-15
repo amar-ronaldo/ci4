@@ -2,7 +2,8 @@
 
 use App\Models\BaseModel;
 
-class AuthModel extends BaseModel 
+
+class UserModel extends BaseModel
 {
     protected $table      = 'users';
     protected $primaryKey = 'id';
@@ -10,9 +11,9 @@ class AuthModel extends BaseModel
     // protected $returnType     = 'array';
     // protected $useSoftDeletes = true;
 
-    // protected $allowedFields = ['name', 'email','password'];
+    // protected $allowedFields = ['name', 'email'];
 
-    // protected $useTimestamps = true;
+    // protected $useTimestamps = false;
     // protected $createdField  = 'created_at';
     // protected $updatedField  = 'updated_at';
     // protected $deletedField  = 'deleted_at';
@@ -20,5 +21,4 @@ class AuthModel extends BaseModel
     // protected $validationRules    = [];
     // protected $validationMessages = [];
     // protected $skipValidation     = false;
-
 }

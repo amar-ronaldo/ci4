@@ -2,18 +2,16 @@
 
 namespace App\Database\Seeds;
 
-class UserGroupsSeeder extends \CodeIgniter\Database\Seeder
+class MenuTypesSeeder extends \CodeIgniter\Database\Seeder
 {
     public function run()
     {
-        $table = "user_groups";
+        $table = "menu_types";
         $data = [
             [
-                'name' => 'Supervisor',
-                'created_by'    => '1'
+                'name' => 'Backend',
             ],[
-                'name' => 'Operator',
-                'created_by'    => '1'
+                'name' => 'Frontend',
             ],
 
         ];

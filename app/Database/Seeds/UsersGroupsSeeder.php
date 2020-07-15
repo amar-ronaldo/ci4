@@ -2,20 +2,20 @@
 
 namespace App\Database\Seeds;
 
-class UserGroupsSeeder extends \CodeIgniter\Database\Seeder
+class UsersGroupsSeeder extends \CodeIgniter\Database\Seeder
 {
     public function run()
     {
-        $table = "user_groups";
+        $table = "users_groups";
         $data = [
             [
-                'name' => 'Supervisor',
-                'created_by'    => '1'
-            ],[
-                'name' => 'Operator',
-                'created_by'    => '1'
+                'user_id'    => '1',
+                'user_group_id'    => '1',
             ],
-
+            [
+                'user_id'    => '2',
+                'user_group_id'    => '2',
+            ],
         ];
         // Using Query Builder
         $this->db->disableForeignKeyChecks();

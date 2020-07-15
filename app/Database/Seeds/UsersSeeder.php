@@ -8,17 +8,28 @@ class UsersSeeder extends \CodeIgniter\Database\Seeder
     {
         $table = "users";
         $data = [
-            'username' => 'amar',
-            'email'    => 'amar.ronaldo.m@gmail.com',
-            'password' => password_hash("test", PASSWORD_DEFAULT),
-            'created_by'    => '1',
-            'user_group_id'    => '1',
+            [
+                'username' => 'amar',
+                'name' => 'amar',
+                'avatar' => 'avatar13.jpg',
+                'email'    => 'amar.ronaldo.m@gmail.com',
+                'password' => password_hash("test", PASSWORD_DEFAULT),
+                'created_by'    => '1',
+            ],
+            [
+                'username' => 'amar2',
+                'name' => 'amar2',
+                'avatar' => 'avatar13.jpg',
+                'email'    => 'amar.bots@gmail.com',
+                'password' => password_hash("test", PASSWORD_DEFAULT),
+                'created_by'    => '1',
+            ],
         ];
         // Using Query Builder
         $this->db->disableForeignKeyChecks();
         $db = $this->db->table($table);
         $db->truncate();
-        $db->insert($data);
+        $db->insertBatch($data);
         $this->db->enableForeignKeyChecks();
     }
 }

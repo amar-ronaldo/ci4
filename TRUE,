@@ -1,2 +1,0 @@
-alias rr="php spark migrate:refresh" &&
-alias ss="php spark db:seed AllSeeder"

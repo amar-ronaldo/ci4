@@ -2,17 +2,23 @@
 
 namespace App\Database\Seeds;
 
-class UserGroupsSeeder extends \CodeIgniter\Database\Seeder
+class MemberSitesSeeder extends \CodeIgniter\Database\Seeder
 {
     public function run()
     {
-        $table = "user_groups";
+        $table = "member_sites";
         $data = [
             [
-                'name' => 'Supervisor',
+                'name' => 'PS',
+                'url' => 'http://pialasport.com/',
                 'created_by'    => '1'
-            ],[
-                'name' => 'Operator',
+            ], [
+                'name' => 'PP',
+                'url' => 'https://pialapokerqq.biz/',
+                'created_by'    => '1'
+            ], [
+                'name' => 'PB',
+                'url' => 'https://pialabet.pw/',
                 'created_by'    => '1'
             ],
 

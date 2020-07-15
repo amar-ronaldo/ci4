@@ -35,5 +35,7 @@ class View extends \CodeIgniter\Config\View
 	{
 		
 		parent::__construct();
+		helper('form');
+		helper('inflector');
 	}
 }

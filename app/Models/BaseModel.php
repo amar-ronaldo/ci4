@@ -4,6 +4,12 @@ use CodeIgniter\Model;
 
 class BaseModel extends Model
 {
+    protected $session;
+    public function __construct(){
+        $this->session = \Config\Services::session();
+        parent::__construct();
+
+    }
     public function getData($where = false)
     {
         if ($where === false)
