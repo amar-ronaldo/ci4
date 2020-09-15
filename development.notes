@@ -1,0 +1,55 @@
+[2020-09-13]
+
+Notes:
+    Data player:
+
+        Fitur :
+            [√] - Real Time 
+            [√] - Input Cepet
+
+            [√] - Member 
+                [√] - Crud
+                [√] - Tambah Transaksi
+
+            [√] - User Management
+                -  Hak Akses
+                -  Login di Shift Kerja
+
+            - Report Bank dan Payment 
+                - Bulanan
+                - Harian
+                - Shift Kerja
+
+            [√] - Export Excel ( Semua Fitur ) 
+
+            - Sync Mutasi Bank
+            - Cek Otomatis Selisih Bank dengan Aplikasi
+
+        Notes  :
+            - Migrasi Data Player Sebelum nya
+            - logika : 
+                Koin ber-kurang  = User Deposit       = Bank ber-tambah
+                Koin ber-kurang  = Bonus User         = Bank Tetap
+                Koin ber-tambah  = Admin input
+                Koin ber-tambah  = User Widtdraw      = Bank ber-kurang
+                Koin ber-tambah  = Cancel Bonus User  = Bank Tetap
+Ideas:
+    dashboard
+        user baru 
+            perminggu 
+            bulan 
+            total
+            
+        Transaksi jumlah per payment 
+
+    shortcut input 
+        Transaksi
+        member
+    
+    log Transaksi 
+TODO:
+    [x] view all in record
+    [ ] menu user access 
+    [ ]  
+
+Activity Log:

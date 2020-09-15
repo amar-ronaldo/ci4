@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 class Validation
 {
@@ -28,7 +30,23 @@ class Validation
 	public $templates = [
 		'list'   => 'CodeIgniter\Validation\Views\list',
 		'single' => 'CodeIgniter\Validation\Views\single',
+
 	];
+
+	public $profile = [
+		'username'     => 'required',
+		'name'    	   => 'required',
+		'email'        => 'required|valid_email',
+	];
+	public $change_password = [
+		'username'     => 'required',
+		'name'    	   => 'required',
+		'email'        => 'required|valid_email',
+	];
+	public $file_avatar = [
+		'avatar'       => 'uploaded[avatar]|max_size[avatar,5024]|mime_in[avatar,image/jpg,image/jpeg,image/gif,image/png]',
+	];
+
 
 	//--------------------------------------------------------------------
 	// Rules

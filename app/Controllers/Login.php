@@ -11,6 +11,9 @@ class Login extends BaseController
 	public function __construct()
 	{
 		$this->AuthModel = new AuthModel();
+		// if ($this->session->id){
+
+		// }
 	}
 
 	public function SignIn()

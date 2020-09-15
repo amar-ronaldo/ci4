@@ -1,0 +1,25 @@
+
+div#datatable_length {
+  padding-top: 0.85em;
+  white-space: nowrap;
+}
+div.dataTables_paginate {
+  padding-top: 0.85em;
+}
+div.dataTables_wrapper div.dataTables_filter {
+  text-align: left !important;
+}
+.daterange {
+  background: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.block.block-mode-pinned {
+  max-width: 330px;
+}
+div.dataTables_wrapper div.dataTables_paginate, div.dataTables_wrapper div.dataTables_info{
+  padding-top: 0px;
+}

@@ -1,8 +1,8 @@
 <?php namespace App\Models;
 
-use App\Models\BaseModel;
+use CodeIgniter\Model;
 
-class AuthModel extends BaseModel 
+class AuthModel extends Model 
 {
     protected $table      = 'users';
     protected $primaryKey = 'id';
@@ -21,4 +21,5 @@ class AuthModel extends BaseModel
     // protected $validationMessages = [];
     // protected $skipValidation     = false;
 
+   
 }

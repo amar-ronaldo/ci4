@@ -33,7 +33,7 @@ class App extends BaseConfig
 	| variable so that it is blank.
 	|
 	*/
-	public $indexPage = 'index.php';
+	public $indexPage = '';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -247,7 +247,7 @@ class App extends BaseConfig
 		public $CSRFHeaderName = 'X-CSRF-TOKEN';
 		public $CSRFCookieName = 'csrf_cookie_name';
 		public $CSRFExpire     = 7200;
-		public $CSRFRegenerate = true;
+		public $CSRFRegenerate = false;
 		public $CSRFRedirect   = true;
 		
 		/*

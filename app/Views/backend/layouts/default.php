@@ -1,10 +1,13 @@
+<?php
+helper('inflector');
+?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <?php helper('inflector'); ?>
     <title><?= $_ENV['project.name'] . ' - ' . $title ?></title>
 
     <meta name="description" content="<?= $_ENV['project.name'] . ' - ' . $title ?>">
@@ -30,11 +33,24 @@
     <!-- Stylesheets -->
     <!-- Fonts and OneUI framework -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+    <link rel="stylesheet" href="<?= base_url('assets/js/plugins/datatables/dataTables.bootstrap4.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/js/plugins/datatables/buttons-bs4/buttons.bootstrap4.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/js/plugins/datatables/select.dataTables.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/js/plugins/select2/css/select2.min.css') ?>">
+
     <link rel="stylesheet" id="css-main" href="<?= base_url('assets/css/oneui.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('custom/css/backend.css') ?>">
 
     <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="<?= base_url('assets/css/themes/amethyst.min.css') ?>"> -->
     <!-- END Stylesheets -->
+    <!-- datatable -->
+
+
+    <?= csrf_meta() ?>
+
 </head>
 
 <body>
@@ -84,7 +100,7 @@
             <div class="content-header border-bottom">
                 <!-- User Avatar -->
                 <a class="img-link mr-1" href="javascript:void(0)">
-                    <img class="img-avatar img-avatar32" src="<?= base_url('assets/media/avatars/avatar10.jpg') ?>" alt="">
+                    <img class="img-avatar img-avatar32" src="<?= base_url('assets/media/avatars/avatar.jpg') ?>" alt="">
                 </a>
                 <!-- END User Avatar -->
 
@@ -268,13 +284,16 @@
             <!-- END Side Header -->
 
             <!-- Side Navigation -->
-            <?= view_cell('\App\Libraries\Backend\Theme::sidebar', '', 3600, 'backend_sidebar') ?>
+            <?= view_cell('\App\Libraries\Backend\Theme::sidebar') ?>
+            <?php //view_cell('\App\Libraries\Backend\Theme::sidebar', '', 3600, 'backend_sidebar') 
+            ?>
             <!-- END Side Navigation -->
         </nav>
         <!-- END Sidebar -->
 
         <!-- Header -->
-        <?= view_cell('\App\Libraries\Backend\Theme::header', '', 3600, 'backend_header') ?>
+        <?= view_cell('\App\Libraries\Backend\Theme::header') ?>
+
 
         <!-- END Header -->
 
@@ -288,7 +307,8 @@
 
         </main>
         <!-- END Main Container -->
-        <?= view_cell('\App\Libraries\Backend\Theme::footer', '', 3600, 'backend_footer') ?>
+        <?= view_cell('\App\Libraries\Backend\Theme::footer') ?>
+
 
         <!-- END Footer -->
     </div>
@@ -297,13 +317,32 @@
     <!-- OneUI JS -->
     <script src="<?= base_url('assets/js/oneui.core.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/oneui.app.min.js') ?>"></script>
-    
-    <script src="<?= base_url('assets/js/plugins/select2/js/select2.full.min.js')?>"></script>
-    <script src="<?= base_url('assets/js/plugins/jquery-validation/jquery.validate.min.js')?>"></script>
-    <script src="<?= base_url('assets/js/plugins/jquery-validation/additional-methods.js')?>"></script>
+
+    <script src="<?= base_url('assets/js/plugins/select2/js/select2.full.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/jquery-validation/jquery.validate.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/jquery-validation/additional-methods.js') ?>"></script>
 
     <script src="<?= base_url('assets/js/plugins/sweetalert2/sweetalert2.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js') ?>"></script>
+
+    <!-- datatable -->
+    <script src="<?= base_url('assets/js/plugins/datatables/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/datatables/buttons/dataTables.buttons.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/datatables/buttons/buttons.print.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/datatables/buttons/buttons.html5.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/datatables/buttons/buttons.flash.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/datatables/buttons/buttons.colVis.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/datatables/dataTables.select.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/plugins/moment/moment-with-locales.min.js') ?>"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="<?= base_url('assets/js/plugins/hotkeys/hotkeys.min.js') ?>"></script>
+    <script src="<?= base_url('custom/js/modules/notif.js') ?>"></script>
+    <script src="<?= base_url('custom/js/modules/btn.js') ?>"></script>
+    <script src="<?= base_url('custom/js/modules/form.js') ?>"></script>
+    <script src="<?= base_url('custom/js/modules/crud.js') ?>"></script>
+    <script src="<?= base_url('custom/js/hotkeys.js') ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
 
     <!-- Page JS Helpers (BS Notify Plugin) -->
     <script>
@@ -311,10 +350,110 @@
             One.helpers('notify');
             One.helpers('select2');
             One.helpers('validation');
+            One.helpers('masked-inputs');
         });
+        toast = new notifClass();
+
+        var baseUrl = '<?= current_url() . '/' ?>'
+        var siteUrl = '<?= site_url()  ?>'
+        moment.locale('id');
+        $.fn.dataTable.moment = moment
+        crud = []
+        $(document).find('a.nav-main-link.active').parents('li').addClass('open')
+        const data_ajax_init = {
+            '<?= csrf_token() ?>': '<?= csrf_hash() ?>'
+        }
+        function money_format(){
+            jQuery('.money').mask('#.##0', {reverse: true});
+        }
+        money_format()
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('.daterange').each((index, element) => {
+                var id = $(element).attr('id')
+                id = id + (++index)
+                $(element).attr('id', id)
+
+                var start = '';
+                var end = '';
+
+                // var start = moment().subtract(29, 'days');
+                // var end = moment();
+
+                function cb(start, end) {
+                    if ((start._d == 'Invalid Date' || start == '') && (end._d == 'Invalid Date' || end == '')) {
+                        $('#' + id + ' span').html('');
+                        $('#' + id + ' input').val('');
+                        $('#' + id + ' input').trigger('change')
+                    } else {
+                        $('#' + id + ' span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                        $('#' + id + ' input').val(start.format('YYYY-MM-D') + ' | ' + end.format('YYYY-MM-D'));
+                        $('#' + id + ' input').trigger('change')
+                    }
+                }
+
+                $('#' + id).daterangepicker({
+                    startDate: start,
+                    endDate: end,
+                    ranges: {
+                        'Reset': ['', ''],
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    }
+                }, cb);
+
+                // cb(start, end);
+            })
+            
+            re_init_select2_ajax()
+        });
+        function re_init_select2_ajax(){
+            $('.select2-ajax').each(function() {
+                init_select2_ajax($(this))
+            })
+        }
+
+        function init_select2_ajax(e) {
+            $(e).html('')
+            url = $(e).data('url')
+            $(e).select2({
+                destroy:true,
+                ajax: {
+                    url: baseUrl + url,
+                    dataType: 'json',
+                    data: function(params) {
+                        return {
+                            q: params.term, // search term
+                            page: params.page
+                        };
+                    },
+                    processResults: function(data, params) {
+                        // parse the results into the format expected by Select2
+                        // since we are using custom formatting functions we do not need to
+                        // alter the remote JSON data, except to indicate that infinite
+                        // scrolling can be used
+                        params.page = params.page || 1;
+
+                        return {
+                            results: data.results,
+                            pagination: {
+                                more: (params.page * 10) < data.total_count
+                            }
+                        };
+                    },
+                    cache: true
+                }
+            });
+        }
     </script>
 
     <script src="<?= base_url('custom/js/backend.js') ?>"></script>
+
     <?= $this->renderSection('js') ?>
 </body>
 

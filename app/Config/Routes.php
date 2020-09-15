@@ -30,8 +30,9 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/login', 'Login::SignIn', ['as' => 'login-page']);
-$routes->addRedirect('/', 'login-page');
+$routes->get('/login', 'Login::SignIn', ['as' => 'login']);
+$routes->addRedirect('/', 'login');
+$routes->get('/backend/dashboard', 'Backend\Dashboard::index', ['as' => 'backend']);
 
 $routes->get('logout', 'Login::SignOut', ['as' => 'logout']);
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 /**
@@ -15,6 +16,8 @@ namespace App\Controllers;
  */
 
 use CodeIgniter\Controller;
+use CodeIgniter\HTTP\URI;
+
 
 class BaseController extends Controller
 {
@@ -26,7 +29,7 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = [];
+	protected $helpers = ['Auth', 'General'];
 
 	/**
 	 * Constructor.
@@ -40,7 +43,21 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.:
-		$this->session = \Config\Services::session();
-	}
+		$this->session = session();
+		$this->uri  = new URI(current_url());
+		$this->validate  = \Config\Services::validation();
 
+		$response->isBackend = $this->uri->getSegments()[0] == 'backend';
+		$response->uri1 = $this->uri->getSegments()[0];
+		$response->uri2  = $this->uri->getSegments()[1] ?? 'index';
+		$response->uri3  = $this->uri->getSegments()[2] ?? 'index';
+
+		$response->title  = '';
+		$response->titleDesc  = '';
+		$response->page = false;
+		
+		$response->json = false;
+		$response->ajaxDefault = res_init();
+		$response->ajax = [];
+	}
 }

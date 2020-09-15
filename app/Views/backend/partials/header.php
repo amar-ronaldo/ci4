@@ -44,13 +44,13 @@
             <!-- User Dropdown -->
             <div class="dropdown d-inline-block ml-2">
                 <button type="button" class="btn btn-sm btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded" src="<?= base_url('assets/media/avatars/avatar10.jpg') ?>" alt="Header Avatar" style="width: 18px;">
-                    <span class="d-none d-sm-inline-block ml-1">Adam</span>
+                    <img class="rounded" src="<?= base_url('assets/media/avatars/' . (session('avatar')  ?: 'avatar.jpg')) ?>" alt="Header Avatar" style="width: 18px;">
+                    <span class="d-none d-sm-inline-block ml-1"><?= session('name') ?></span>
                     <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="page-header-user-dropdown">
                     <div class="p-3 text-center bg-primary">
-                        <img class="img-avatar img-avatar48 img-avatar-thumb" src="<?= base_url('assets/media/avatars/avatar10.jpg') ?>" alt="">
+                        <img class="img-avatar img-avatar48 img-avatar-thumb" src="<?= base_url('assets/media/avatars/' .(session('avatar')  ?: 'avatar.jpg')) ?>" alt="">
                     </div>
                     <div class="p-2">
                         <h5 class="dropdown-header text-uppercase">User Options</h5>
@@ -77,7 +77,7 @@
             <!-- END User Dropdown -->
 
             <!-- Notifications Dropdown -->
-            <div class="dropdown d-inline-block ml-2">
+            <div class="dropdown -d-inline-block ml-2 d-none">
                 <button type="button" class="btn btn-sm btn-dual" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="si si-bell"></i>
                     <span class="badge badge-primary badge-pill">6</span>
@@ -165,7 +165,7 @@
 
             <!-- Toggle Side Overlay -->
             <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-            <button type="button" class="btn btn-sm btn-dual ml-2" data-toggle="layout" data-action="side_overlay_toggle">
+            <button type="button" class="btn btn-sm btn-dual d-none ml-2" data-toggle="layout" data-action="side_overlay_toggle">
                 <i class="fa fa-fw fa-list-ul fa-flip-horizontal"></i>
             </button>
             <!-- END Toggle Side Overlay -->

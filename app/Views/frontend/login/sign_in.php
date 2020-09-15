@@ -19,11 +19,11 @@
                   <div class="block-header">
                     <h3 class="block-title"><?= lang('Signin.page_name')?></h3>
                     <div class="block-options">
-                      <a
+                      <!-- <a
                         class="btn-block-option font-size-sm"
                         href="<?= base_url('login/ForgetPassword');?>"
                         ><?= lang('Signin.btn_forget_password') ?></a
-                      >
+                      > -->
                       
                     </div>
                   </div>
